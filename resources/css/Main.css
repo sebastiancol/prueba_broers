@@ -1,0 +1,17 @@
+.main{
+    display: grid;
+    grid-area:span ;
+}
+
+body{
+    background-color: #576574;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.color{
+    background-color: #c8d6e5;
+}
+
+.item{
+    grid-column: 3
+}

@@ -1,0 +1,87 @@
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .line.active:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .line.active:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .line.active:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar height */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+  
+  .menu.open {
+    display: flex;
+  }
+  
+  .menu-item {
+    list-style: none;
+    margin: 10px 0;
+  }
+  
+  .menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-item a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none; /* Hide hamburger icon on larger screens */
+    }
+  
+    .menu {
+      display: flex;
+      position: static; /* Change to static position on larger screens */
+      flex-direction: row;
+      align-items: center;
+      background-color: transparent; /* Transparent background */
+    }
+  
+    .menu-item {
+      margin: 0 15px;
+    }
+  }
