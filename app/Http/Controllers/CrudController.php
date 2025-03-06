@@ -72,4 +72,9 @@ class CrudController extends Controller
         $user->delete();
         return redirect()->route('crud_get')->with('success', 'Eliminado con exito!');
     }
+
+     public function cancel()
+    {
+        return redirect()->route('crud_get');
+    }
 }
