@@ -58,7 +58,7 @@
                                     <td>{{ $item->name}}</td>
                                     <td>{{ $item->email}}</td>
                                     <td>{{ $item->role}}</td>
-                                    <td>{{ $item->status}}</td>
+                                    <td>{{ $item->status ? "Activo" : "Inactivo"}}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-">
                                             <a class="" href="{{ route('crud_edit', $item->id) }}">EDITAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
@@ -67,6 +67,10 @@
                                         
                                         <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deleteUser" id="delete">
                                            ELIMINAR
+                                        </button>
+
+                                         <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" id="changue" >
+                                           CAMBIAR ESTADO
                                         </button>
                                         
                                         <div class="modal fade" data-animation="slideInOutLeft" tabindex="-1" aria-labelledby="modal-title" id="deleteUser">
@@ -85,6 +89,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="modal fade" data-animation="slideInOutLeft" tabindex="-1" aria-labelledby="modal-title" id="changestate">
+                                        
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                
+                                                    <div class="modal-body">
+                                                        <p>¿DESEA CAMBIAR EL ESTADO?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+                                                        <button type="button" class="btn btn-primary">
+                                                            <a class="" {{ $item->status ? "Desactivar" : "Activar"}}>CONFIRMAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
                                             
                                         </div>
                                         
